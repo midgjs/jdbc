@@ -34,6 +34,7 @@ public class BookSelectAll {
 			query += "         author_desc ";
 			query += " from book b, author a ";
 			query += " where a.author_id = b.author_id ";
+			System.out.println(query);
 			
 			//바인딩
 			pstmt = conn.prepareStatement(query);
@@ -47,11 +48,11 @@ public class BookSelectAll {
 				String title = rs.getString(2);
 				String pubs = rs.getString(3);
 				String pubDate = rs.getString(4);
-				int aAuthorId = rs.getInt(5);
+				int authorId = rs.getInt(5);
 				String authorName = rs.getString(6);
 				String authorDesc = rs.getString(7);
 				
-			System.out.println(bookId + ", " + title + ", " + pubs + ", " + pubDate + ", " + aAuthorId + ", " + authorName + ", " + authorDesc);
+			System.out.println(bookId + ", " + title + ", " + pubs + ", " + pubDate + ", " + authorId + ", " + authorName + ", " + authorDesc);
 			
 			}
 			
